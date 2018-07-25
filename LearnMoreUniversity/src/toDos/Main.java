@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ProgInitializer.initialize("E:\\eclipseWorkspace\\LearnMoreUniversity\\database.csv");
+		ProgInitializer.initialize("E:\\eclipseWorkspace\\LearnMoreUniversity\\database.csv" , "E:\\eclipseWorkspace\\LearnMoreUniversity\\medical benefits file.txt" );
 		
 		Initializer ini = new Initializer();
 		

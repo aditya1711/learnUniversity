@@ -31,8 +31,4 @@ public class ProvideBenefits implements Runnable{
 		}
 	}
 	
-	public void setBenefits(String empId, Benefit b){
-		
-	}
-	
 }

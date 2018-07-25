@@ -3,6 +3,9 @@ package functions;
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.Callable;
+
+import benefits.Benefit;
+import benefits.MedicalBenefits;
 import humanResources.*;
 import toDos.Display;
 
@@ -43,7 +46,7 @@ public class UserInput implements Callable, Runnable{
 				new Display().displayByID(input[1], input[2]);
 			}
 			else if(input[0].equals("provide benefits")){
-				
+				MedicalBenefits.getMedicalBeniftsObject().setBenefits(input[1], Benefit.getBenefit(input[2]));
 			}
 		}
 		return null;
