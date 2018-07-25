@@ -29,8 +29,13 @@ public class MedicalBenefits implements BenefitsProvider {
 	public void provideBenefits(Employee e){
 		try {
 			Benefit b =  models.MedicalBenefitProvider.decideBenefits(e.getGrade());
-			bd.addBenefits(e.getID(), b);
-			fw.write(e.getID() + " Benefits Provided: " + b);
+			
+			if(bd.addBenefits(e.getID(), b))
+				fw.write(e.getID() + " Benefits Provided: " + b);
+			
+			else 
+				System.out.println("Benefit already added");
+			
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

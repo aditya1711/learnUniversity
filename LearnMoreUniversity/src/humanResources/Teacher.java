@@ -34,7 +34,7 @@ public class Teacher extends StakeHolder implements Employee, DisplayConsole, Wr
 		String[] data = s.split(",");
 		setGrade(data[5]);
 		setSubject(data[6]);
-		MedicalBenefits.getMedicalBeniftsObject().provideBenefits(this);
+		//MedicalBenefits.getMedicalBeniftsObject().provideBenefits(this);
 	}
 	
 	

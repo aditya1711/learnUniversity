@@ -1,16 +1,25 @@
 package benefits;
 
+import functions.FileWriteAtEnd;
 import humanResources.Employee;
 import humanResources.Human;
 import humanResources.StakeHolders;
 
 public class ProvideBenefits implements Runnable{
+	
+	String fileName;
+	public ProvideBenefits(String f){
+		fileName= f;
+	}
 
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
+		Runtime.getRuntime().addShutdownHook(new Thread(new BenefitsFileWriterAtEnd(fileName)));
+		
 		MedicalBenefits medicalBenefits = MedicalBenefits.getMedicalBeniftsObject();
 		StakeHolders database = StakeHolders.getHumansData();
+		
 		Human[] data = database.getAll();
 		for(int i=0;i<data.length;i++){
 			Human h = data[i];
