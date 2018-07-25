@@ -8,6 +8,7 @@ import humanResources.StakeHolders;
 public class ProvideBenefits implements Runnable{
 	
 	String fileName;
+	MedicalBenefits medicalBenefits = MedicalBenefits.getMedicalBeniftsObject();
 	public ProvideBenefits(String f){
 		fileName= f;
 	}
@@ -17,7 +18,7 @@ public class ProvideBenefits implements Runnable{
 		// TODO Auto-generated method stub
 		Runtime.getRuntime().addShutdownHook(new Thread(new BenefitsFileWriterAtEnd(fileName)));
 		
-		MedicalBenefits medicalBenefits = MedicalBenefits.getMedicalBeniftsObject();
+		
 		StakeHolders database = StakeHolders.getHumansData();
 		
 		Human[] data = database.getAll();
@@ -28,6 +29,10 @@ public class ProvideBenefits implements Runnable{
 				medicalBenefits.provideBenefits(e);
 			}
 		}
+	}
+	
+	public void setBenefits(String empId, Benefit b){
+		
 	}
 	
 }

@@ -15,10 +15,13 @@ public class BenefitsData {
 	public Benefit getBenefits(String empID){
 		return dataMap.get(empID);
 	}
-	public boolean addBenefits(String empID, Benefit b){
+	/*public boolean offerBenefits(String empID, Benefit b){
 		if(dataMap.putIfAbsent(empID, b)!=null){
 			return false;
 		}
 		return true;
+	}*/
+	public void addBenefits(String empID, Benefit b){
+		dataMap.putIfAbsent(empID, b);
 	}
 }

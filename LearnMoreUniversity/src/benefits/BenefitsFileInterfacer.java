@@ -34,6 +34,8 @@ public class BenefitsFileInterfacer {
 	public boolean addBenefitHuman(String empID, Benefit b){
 		try {
 			bw.write(empID + " Benefits Provided: " + b);
+			bw.newLine();
+			bw.flush();
 			return true;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

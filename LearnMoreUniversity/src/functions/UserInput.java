@@ -42,7 +42,9 @@ public class UserInput implements Callable, Runnable{
 			else if(input[0].equals("fetch")){
 				new Display().displayByID(input[1], input[2]);
 			}
-			//else if(input[0].equals(""))
+			else if(input[0].equals("provide benefits")){
+				
+			}
 		}
 		return null;
 	}
