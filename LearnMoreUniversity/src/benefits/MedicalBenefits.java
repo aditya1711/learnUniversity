@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import humanResources.*;
 
-public class MedicalBenefits implements Benefits {
+public class MedicalBenefits implements BenefitsProvider {
 	
 	private static MedicalBenefits mb = new MedicalBenefits();
 	private static BenefitsData bd = BenefitsData.getBenefitsDataObject();
@@ -28,8 +28,9 @@ public class MedicalBenefits implements Benefits {
 	
 	public void provideBenefits(Employee e){
 		try {
-			
-			fw.write(e.getID() + " " + models.MedicalBenefitProvider.decideBenefits(e.getGrade()));
+			Benefit b =  models.MedicalBenefitProvider.decideBenefits(e.getGrade());
+			bd.addBenefits(e.getID(), b);
+			fw.write(e.getID() + " Benefits Provided: " + b);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

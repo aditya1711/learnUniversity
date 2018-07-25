@@ -1,6 +1,5 @@
 package humanResources;
 
-import benefits.Benefits;
 import benefits.MedicalBenefits;
 import functions.DisplayConsole;
 import functions.WriteToFile;
@@ -9,7 +8,7 @@ public class Teacher extends StakeHolder implements Employee, DisplayConsole, Wr
 	
 	public String grade;
 	public String subject;
-	public Benefits benefits;
+	
 
 	public Teacher(String s){
 		setTeacherWhole(s);
@@ -30,15 +29,6 @@ public class Teacher extends StakeHolder implements Employee, DisplayConsole, Wr
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
-	
-	public Benefits getBenefits() {
-		return benefits;
-	}
-
-	public void setBenefits(Benefits benefits) {
-		this.benefits = benefits;
-	}
-	
 	public void setTeacherWhole(String s){
 		super.setStakeHolderWhole(s);
 		String[] data = s.split(",");

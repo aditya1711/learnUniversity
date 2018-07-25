@@ -1,7 +1,9 @@
 package models;
 
+import benefits.Benefit;
+
 public class MedicalBenefitProvider {
-	public static String decideBenefits(String grade){
-		return "Medical Benefits to Grade: " + grade;
+	public static Benefit decideBenefits(String grade){
+		return Benefit.getBenefit(grade);
 	}
 }

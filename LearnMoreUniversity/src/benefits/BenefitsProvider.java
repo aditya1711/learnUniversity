@@ -1,6 +1,6 @@
 package benefits;
 
-public interface Benefits {
+public interface BenefitsProvider {
 	
 	public void provideBenefits(humanResources.Employee sh);
 }
